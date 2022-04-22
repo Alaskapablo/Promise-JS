@@ -1,4 +1,5 @@
 
+
 # Promise JS
 
 A promise é uma função construtora normal do JS.
@@ -32,4 +33,58 @@ function f(g, h){
 }
 ```
 
-<img src="https://web.whatsapp.com/d5758e02-7175-4c34-9ca1-88b7e82ca49f">
+Se durante a execução da logica da função f, a função
+"h" for chamada com o argumento "Q"(opcional), então
+o estado da promise mudará para "rejected", e o resultado
+da promise será o valor "Q"
+
+```javascript
+function f(g, h)
+    h("Q")
+}
+```
+
+Oque isso significa? Que uma promise vai ser instanciada
+com uma função f, e nessa função f vamos ter alguma logica
+de resolver ou rejeitar a promise
+
+```javascript
+function f(g, h)
+    if( 10 > 0 ){
+        g("P")
+    }else{
+        h("Q")
+    }
+}
+```
+
+## Exemplo de Fulfilled
+
+```javascript
+function f(g, h)
+    if( 10 > 0 ){
+        g("P")
+    }else{
+        h("Q")
+    }
+}
+```
+
+O retorno dessa chamada vai ser true, então vai dar 
+"fulfilled" e o resultado da promise vai ser o valor "p".
+
+## Exemplo de Rejected
+
+```javascript
+function f(g, h)
+    if( 10 < 0 ){
+        g("P")
+    }else{
+        h("Q")
+    }
+}
+```
+
+
+O retorno dessa chamada vai ser false, então vai dar
+"rejected" e o resultado da promise vai ser o valor "q"
